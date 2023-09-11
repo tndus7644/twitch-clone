@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import {GlobalStyle} from "../styled/Reset.Styled";
-import Routes from "./routes/router";
 import Template from "./components/template";
+import Router from "./routes/Router";
+
 
 const App = () => {
 
@@ -11,7 +12,7 @@ const App = () => {
         <Container>
             <GlobalStyle/>
             <Template>
-                <Routes/>
+                <Router/>
             </Template>
         </Container>
     )

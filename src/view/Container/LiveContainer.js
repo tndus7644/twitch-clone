@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactTwitchEmbedVideo from "react-twitch-embed-video"
+import {useParams} from "react-router";
 
-const LiveContainer = ({match}) => {
+const LiveContainer = () => {
 
-    const channelId = match.params.id;
+    const channelId = useParams();
 
     return (
         <Container>
