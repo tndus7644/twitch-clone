@@ -6,14 +6,15 @@ import {useParams} from "react-router";
 const LiveContainer = () => {
 
     const channelId = useParams();
+    // match.params.id 사용못함
 
     return (
         <Container>
             <Video>
-                <ReactTwitchEmbedVideo channel={channelId}
-                                       className={"StreamVideo"}
-                                       width={"1680px"}
-                                       height={"800px"}/>
+                {/*<ReactTwitchEmbedVideo channel={channelId}*/}
+                {/*                       className={"StreamVideo"}*/}
+                {/*                       width={"1680px"}*/}
+                {/*                       height={"800px"}/>*/}
             </Video>
         </Container>
     )
