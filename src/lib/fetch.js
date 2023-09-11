@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {TWITCH_API_KEY, URL} from "../constants/consts";
 
 const FetchConsts = {
     GET: 'get',
