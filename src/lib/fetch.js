@@ -1,5 +1,14 @@
 import axios from 'axios';
 
+const axiosInstance = axios.create({
+    baseURL: "https://api.twitch.tv/helix" ,
+    timeout: 6000,
+    headers: {
+        'Client-ID': '0r7i8cu8mrldfrtsyyocgj3hu77mcf',
+        'Authorization': 'Bearer i1qfs7o30jspmsl0i6y085yycepic3'
+    }
+});
+
 const FetchConsts = {
     GET: 'get',
     POST: 'post',
@@ -10,15 +19,6 @@ const FetchConsts = {
     MULTIPART_FORM_DATA: 'multipart/form-data',
     TEXT_PLAIN: 'text/plain',
 }
-
-const axiosInstance = axios.create({
-    baseURL: "https://api.twitch.tv/helix" ,
-    timeout: 6000,
-    headers: {
-        'Client-ID': '0r7i8cu8mrldfrtsyyocgj3hu77mcf',
-        'Authorization': 'Bearer i1qfs7o30jspmsl0i6y085yycepic3'
-    }
-});
 
 const request = async (contentType, method, url, data) => {
     try {
