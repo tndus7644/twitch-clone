@@ -13,11 +13,11 @@ const FetchConsts = {
 }
 
 const axiosInstance = axios.create({
-    baseURL: URL.API_BASE_URL,
+    baseURL: "https://api.twitch.tv/helix" ,
     timeout: 6000,
-    headers:{
-        'Client-ID':TWITCH_API_KEY,
-        'Authorization':'Bearer znjucrta17il141mkrpj9aap7jac4e'
+    headers: {
+        'Client-ID': '0r7i8cu8mrldfrtsyyocgj3hu77mcf',
+        'Authorization': 'Bearer i1qfs7o30jspmsl0i6y085yycepic3'
     }
 });
 
