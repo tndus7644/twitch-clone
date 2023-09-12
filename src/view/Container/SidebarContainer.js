@@ -26,7 +26,6 @@ const SidebarContainer = () => {
         <Container>
             <h3>추천 채널</h3>
             <SidebarLiveList LiveStreamsList={LiveStreamsList}/>
-            <SidebarInfo/>
             <Footer/>
         </Container>
     )
@@ -39,7 +38,7 @@ const Container = styled.div`
   padding: 65px 10px 0;
   width: 240px;
   height: 100vh;
-  background: #eee;
+  background: #1f1f23;
   z-index: 100;
   
   h3{

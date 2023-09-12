@@ -1,6 +1,5 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
-import ReactTwitchEmbedVideo from "react-twitch-embed-video"
 import {useParams} from "react-router";
 
 const LiveContainer = () => {
@@ -8,13 +7,22 @@ const LiveContainer = () => {
     const channelId = useParams();
     // match.params.id 사용못함
 
+    const [url, setUrl] = useState('');
+
+    useEffect(() => {
+        setUrl(`https://player.twitch.tv/?channel=${channelId}&parent=spyaudio.net&muted=true`);
+    },[channelId])
+
+
     return (
         <Container>
             <Video>
-                {/*<ReactTwitchEmbedVideo channel={channelId}*/}
-                {/*                       className={"StreamVideo"}*/}
-                {/*                       width={"1680px"}*/}
-                {/*                       height={"800px"}/>*/}
+                <iframe
+                    src={url}
+                    height="800"
+                    width="1680"
+                    allowfullscreen>
+                </iframe>
             </Video>
         </Container>
     )

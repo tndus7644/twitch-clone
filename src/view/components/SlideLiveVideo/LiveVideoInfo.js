@@ -4,21 +4,22 @@ import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const LiveVideoInfo = (props) => {
 
-    const {viewer_count, user_name, game_name} = props
+    const {viewer_count, user_name, game_name, title} = props
 
     return (
         <Container>
             <ProfileImage/>
             <h1>{user_name}</h1>
-            <p className={"game_name"}>{game_name}</p>
-            <p>시청자 {viewer_count}명</p>
+            <p className={"info"}>{game_name}</p>
+            <p className={"info"}>시청자 {viewer_count}명</p>
+            <p className={"info"}>{title}</p>
         </Container>
     )
 }
 
 const Container = styled.div`
   width: 200px;
-  background: #fff;
+  background: #18181b;
   padding: 10px;
   font-size: 13px;
   line-height: 1.4;
@@ -31,8 +32,8 @@ const Container = styled.div`
     cursor: pointer;
   }
   
-  p.game_name{
-    color: #9047ff;
+  p.info{
+    color: #fff;
     cursor: pointer;
   }
 `;

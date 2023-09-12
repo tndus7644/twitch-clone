@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {thousandNumberFormat} from "../../../lib/common";
 import {CustomString} from "../../../styled/Title.Styled";
-import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const SidebarLiveContent = (props) => {
 
@@ -10,14 +9,22 @@ const SidebarLiveContent = (props) => {
         user_name,
         viewer_count,
         game_name,
-        user_login
+        user_login,
+        thumbnail_url
     } = props
+
+    const [thumbnail, setThumbnail] = useState('');
+
+    useEffect(() => {
+        setThumbnail(thumbnail_url.replace('{width}x{height}', '70x70'))
+    },[thumbnail_url])
+
 
 
     return (
         <Container>
             <Profile>
-                <ProfileImage/>
+                <ProfileImage src={thumbnail} alt="profile image"/>
                 <div className={"Profile_info"}>
                     <UserName>{user_name} ({user_login})</UserName>
                     <p>{game_name}</p>
@@ -39,6 +46,12 @@ const Container = styled.div`
   font-size: 14px;
 `;
 
+const ProfileImage = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+`;
+
 const Profile = styled.div`
   padding-left: 5px;
   line-height: 1.2;
@@ -49,7 +62,7 @@ const Profile = styled.div`
     margin-left: 10px;
 
     p {
-      color: #666;
+      color: #adadb8;
       overflow: hidden;
       text-overflow: ellipsis;
       display: -webkit-box;

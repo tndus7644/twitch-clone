@@ -23,8 +23,6 @@ const Header = () => {
                 </Logo>
                 <Nav>
                     <NavItem>탐색</NavItem>
-                    <NavItem>e스포츠</NavItem>
-                    <NavItem>음악</NavItem>
                     <NavItem><DotSvg/></NavItem>
                 </Nav>
             </Gnb>
@@ -47,8 +45,8 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 55px;
-  border-bottom: 1px solid #ddd;
-  background: #fff;
+  border-bottom: 1px solid #0c0c0e;
+  background: #18181b;
 `;
 
 const Logo = styled.div`

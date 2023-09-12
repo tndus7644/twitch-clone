@@ -10,7 +10,8 @@ const LiveVideoContent = (props) => {
         viewer_count,
         user_name,
         game_name,
-        user_login
+        user_login,
+        title
     } = props
 
     const history = useNavigate();
@@ -27,7 +28,7 @@ const LiveVideoContent = (props) => {
                 <h3>생방송</h3>
                 <img src={VideoThumbSrc} alt=""/>
             </Video>
-            <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name}/>
+            <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name} title={title}/>
         </Container>
     )
 }

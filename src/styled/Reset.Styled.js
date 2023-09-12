@@ -53,7 +53,7 @@ export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
     text-decoration: none;
-    color: #222;
+    color: #efeff1;
     ::-webkit-scrollbar{
       display: none; !important;
     }

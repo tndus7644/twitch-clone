@@ -11,7 +11,7 @@ const LiveChannelList = ({LiveStreamsList}) => {
     return (
         <Container>
             <VideoListTitle>
-                <h1>취향 저격 생방송 채널</h1>
+                <h1>취향 저격 <span>생방송 채널</span></h1>
             </VideoListTitle>
             <GridList data={LiveStreamsList.data}
                       renderItem={renderItem}

@@ -33,9 +33,10 @@ const Button = styled(GlobalButton)`
   margin: 0 4px;
   border-radius: 4px;
   
+  
 
   &.login{
-    background: #f1f1f1;
+    background: #2f2f35;
   }
   
   &.join{

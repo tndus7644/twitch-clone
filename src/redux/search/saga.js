@@ -28,7 +28,6 @@ const saga = function* () {
                     }else {
                         ifOffChannels.push(item)
                     }
-                    return console.log("item", item)
                 })
                 if(result){
                     yield put(Action.Creators.updateState({

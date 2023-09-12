@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import {GlobalButton} from "../../../styled/Button.Styled";
 import {SearchSvg} from "../svg";
@@ -48,15 +48,15 @@ const Container = styled.div`
 const Form = styled.form`
   display: block;
   width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
 `;
 
 const Label = styled.label`
   display: flex;
   align-items: center;
   height: 36px;
-  border-radius: 5px;
-  overflow: hidden;
-  background: #e5e5e5;
+  background: #18181b;
 
 `;
 
@@ -66,21 +66,20 @@ const Input = styled.input`
   flex: 1;
   height: 100%;
   background: none;
-  border: none;
-  
-  &:hover{
-    border: 2px solid #ddd;
+  border: 1px solid #67676b;
+
+  &:hover {
+    border: 2px solid #67676b;
   }
 
   &:focus {
     outline: 0;
     border: 2px solid #9047ff;
-    background: #fff;
   }
 `;
 
 const Button = styled(GlobalButton)`
-  background: #f9f9f9;
+  background: #2f2f35;
   height: 100%;
 
   svg {

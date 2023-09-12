@@ -53,7 +53,7 @@ const Container = styled.div`
 const Title = styled.div`
   font-size: 18px;
   font-weight: bold;
-  color: #000;
+  color: #fff;
   margin-bottom: 30px;
   line-height: 2.5;
   border-bottom: 1px solid #ddd;

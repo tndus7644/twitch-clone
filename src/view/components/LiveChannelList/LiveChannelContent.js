@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {useNavigate} from "react-router";
 import {CustomString} from "../../../styled/Title.Styled";
-import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const LiveChannelContent = (props) => {
 
@@ -16,6 +15,7 @@ const LiveChannelContent = (props) => {
     } = props
 
     const VideoThumbSrc = thumbnail_url.replace('{width}', '316').replace('{height}', '178')
+    const usersImage = thumbnail_url.replace('{width}x{height}', '70x70')
 
     const history = useNavigate();
 
@@ -31,7 +31,7 @@ const LiveChannelContent = (props) => {
                 <p>시청자 {viewer_count}명</p>
             </Video>
             <VideoInfo>
-                <ProfileImage/>
+                <ProfileImage src={usersImage} alt="profile image"/>
                 <Info>
                     <Title>{title}</Title>
                     <p>{user_name}</p>
@@ -45,6 +45,12 @@ const LiveChannelContent = (props) => {
 const Container = styled.div`
   cursor: pointer;
   max-width: 316px;
+`;
+
+const ProfileImage = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 `;
 
 const Video = styled.div`
@@ -90,7 +96,7 @@ const Info = styled.div`
   flex: 1;
 
   p {
-    color: #666;
+    color: #adadb8;
     font-size: 14px;
     line-height: 1.4;
   }
