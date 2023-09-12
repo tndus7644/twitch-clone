@@ -1,14 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import {ProfileImage} from "../../../styled/ProfileImage.Styled";
 
 const LiveVideoInfo = (props) => {
 
-    const {viewer_count, user_name, game_name, title} = props
+    const {viewer_count, user_name, game_name, title, usersImage} = props
 
     return (
         <Container>
-            <ProfileImage/>
+            <ProfileImage src={usersImage} alt={"usersImage"}/>
             <h1>{user_name}</h1>
             <p className={"info"}>{game_name}</p>
             <p className={"info"}>시청자 {viewer_count}명</p>
@@ -36,6 +35,12 @@ const Container = styled.div`
     color: #fff;
     cursor: pointer;
   }
+`;
+
+const ProfileImage = styled.img`
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
 `;
 
 
