@@ -20,9 +20,7 @@ const LiveContainer = () => {
                 <iframe
                     src={url}
                     height="800"
-                    width="1680"
-                    allowfullscreen>
-                </iframe>
+                    width="1680"/>
             </Video>
         </Container>
     )

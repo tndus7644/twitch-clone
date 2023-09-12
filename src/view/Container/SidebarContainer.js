@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import SidebarLiveList from "../components/Sidebar/SidebarLiveList";
 import {videosActions} from "../../redux/ActionCreators";
 import {useSelector} from "react-redux";
-import SidebarInfo from "../components/Sidebar/SidebarInfo";
 import Footer from "../components/Footer";
 
 const SidebarContainer = () => {
