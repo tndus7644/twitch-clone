@@ -5,15 +5,15 @@ import {SwiperSlide, Swiper} from "swiper/react";
 
 //style
 import 'swiper/css';
-// Import Swiper styles
-import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
+import 'swiper/css/navigation';
 
 // import required modules
-import {EffectCreative} from 'swiper/modules';
+import {EffectCreative, Navigation} from 'swiper/modules';
 
 const LiveSlider = ({LiveStreamsList}) => {
+
+    console.log(LiveStreamsList)
 
     return (
         <Container>
@@ -22,18 +22,19 @@ const LiveSlider = ({LiveStreamsList}) => {
                     className='swiper-container'
                     grabCursor={true}
                     effect={'creative'}
+                    navigation={true}
                     loop={true}
                     creativeEffect={{
                         prev: {
                             shadow: true,
-                            translate: ['-120%', 0, -600],
+                            translate: ['-120%', 0, -500],
                         },
                         next: {
                             shadow: true,
-                            translate: ['120%', 0, -600],
-                        },
+                            translate: ['120%', 0, -500],
+                        }
                     }}
-                    modules={[EffectCreative]}
+                    modules={[EffectCreative, Navigation]}
                 >
                     {
                         LiveStreamsList.data.map((item, index) =>
@@ -53,17 +54,14 @@ const Container = styled.div`
   
 
   .swiper-container {
-    max-width: 1400px;
+    max-width: 800px;
     width: 100%;
-    box-shadow: 0 1px 10px 6px rgba(0, 0, 0, 0.04);
   }
 
   .swiper-slide {
     display: flex;
     align-items: center;
     justify-content: center;
-    max-width: 800px;
-    height: 300px;
   }
 
 `;
