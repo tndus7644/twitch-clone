@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Header from "../Header";
-import SidebarContainer from "../../Container/SidebarContainer";
+import SidebarContainer from "../../container/SidebarContainer";
 
 const Template = ({children}) => {
 
