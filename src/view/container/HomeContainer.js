@@ -42,10 +42,14 @@ const HomeContainer = () => {
 
     return (
         <Container>
-            <LiveSlider LiveStreamsList={LiveStreamsList}/>
-            <LiveChannelList LiveStreamsList={LiveStreamsList}/>
-            <CategoryList categoryList={categoryList}/>
-            <StreamsCategory LiveCategoryStreams={LiveCategoryStreams}/>
+            {categoryList && LiveStreamsList && LiveCategoryStreams && (
+                <>
+                <LiveSlider LiveStreamsList={LiveStreamsList}/>
+                <LiveChannelList LiveStreamsList={LiveStreamsList}/>
+                <CategoryList categoryList={categoryList}/>
+                <StreamsCategory LiveCategoryStreams={LiveCategoryStreams}/>
+                </>
+            )}
         </Container>
     )
 }
