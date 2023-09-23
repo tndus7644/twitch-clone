@@ -9,11 +9,11 @@ const saga = function* () {
                 const result = yield call(API.searchChannels, data)
                 console.log("[saga searchChannels]", result)
                 const channelsData = yield Promise.all(result.data.map(async item => {
-                    if(item.is_live){
+                    if (item.is_live) {
                         const streamData = await API.getLiveStreams({
                             user_id: item.id
                         })
-                        return{
+                        return {
                             ...item,
                             ...streamData.data[0]
                         }
@@ -23,16 +23,16 @@ const saga = function* () {
                 let isLiveChannels = [];
                 let ifOffChannels = [];
                 channelsData.map((item) => {
-                    if(item.is_live){
-                        isLiveChannels.push(item)
-                    }else {
-                        ifOffChannels.push(item)
+                    if (item.is_live) {
+                        return isLiveChannels.push(item)
+                    } else {
+                        return ifOffChannels.push(item)
                     }
                 })
-                if(result){
+                if (result) {
                     yield put(Action.Creators.updateState({
                         channels: {
-                            isLive : isLiveChannels,
+                            isLive: isLiveChannels,
                             isOff: ifOffChannels
                         }
                     }))
@@ -45,7 +45,7 @@ const saga = function* () {
             try {
                 const result = yield call(API.searchCategories, data)
                 console.log("[saga searchCategories]", result)
-                if(result){
+                if (result) {
                     yield put(Action.Creators.updateState({
                         categories: result
                     }))
@@ -54,16 +54,16 @@ const saga = function* () {
                 console.log("e", e)
             }
         }),
-        takeLatest(Action.Types.SEARCH_VIDEOS, function* ({data}){
-            try{
+        takeLatest(Action.Types.SEARCH_VIDEOS, function* ({data}) {
+            try {
                 const result = yield call(API.getSearchVideos, data)
                 console.log("[saga getSearchVideos]", result)
-                if(result){
+                if (result) {
                     yield put(Action.Creators.updateState({
-                        videosList:result
+                        videosList: result
                     }))
                 }
-            }catch (e){
+            } catch (e) {
                 console.log("e", e)
             }
         })

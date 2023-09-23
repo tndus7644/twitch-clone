@@ -16,10 +16,12 @@ const Footer = () => {
 }
 
 const Container = styled.div`
-  line-height: 1.4;
+  line-height: 1.6;
   padding-top: 15px;
   font-size: 13px;
-  color: #555;
+  p{
+    color: #adadb8;
+  }
 `;
 
 export default Footer;

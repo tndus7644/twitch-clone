@@ -11,7 +11,7 @@ const LiveVideoContent = (props) => {
         user_name,
         game_name,
         user_login,
-        title
+        title,
     } = props
 
     const history = useNavigate();
@@ -21,6 +21,7 @@ const LiveVideoContent = (props) => {
     }
 
     const VideoThumbSrc = thumbnail_url.replace('{width}', '530').replace('{height}', '300')
+    const usersImage = thumbnail_url.replace('{width}x{height}', '70x70')
 
     return (
         <Container onClick={() => navigate(`/live/${user_login}`)}>
@@ -28,7 +29,7 @@ const LiveVideoContent = (props) => {
                 <h3>생방송</h3>
                 <img src={VideoThumbSrc} alt=""/>
             </Video>
-            <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name} title={title}/>
+            <LiveVideoInfo viewer_count={viewer_count} user_name={user_name} game_name={game_name} title={title} usersImage={usersImage}/>
         </Container>
     )
 }

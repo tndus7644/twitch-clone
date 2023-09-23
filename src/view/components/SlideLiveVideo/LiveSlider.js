@@ -5,51 +5,63 @@ import {SwiperSlide, Swiper} from "swiper/react";
 
 //style
 import 'swiper/css';
+import 'swiper/css/effect-coverflow';
+import 'swiper/css/navigation';
 
-
-// init Swiper:
-// const swiper = new Swiper('.swiper', {
-//     modules: [Navigation, Pagination],
-// })
+// import required modules
+import {EffectCreative, Navigation} from 'swiper/modules';
 
 const LiveSlider = ({LiveStreamsList}) => {
 
+    console.log(LiveStreamsList)
+
     return (
         <Container>
-            <Swiper
-                className='swiper-container'
-                spaceBetween={50}
-                slidesPerView={1}
-                navigation //*
-                pagination={{clickable: true}} //*
-                scrollbar={{draggable: true}} //*
-                onSwiper={(swiper) => console.log(swiper)}
-                onSlideChange={() => console.log("slide change")}
-            >
-                {
-                    LiveStreamsList.data.map((item, index) =>
-                        <SwiperSlide key={index} className={"swiper-slide"}>
-                            <LiveVideoContent {...item}/>
-                        </SwiperSlide>)
+            {LiveStreamsList ?
+                <Swiper
+                    className='swiper-container'
+                    grabCursor={true}
+                    effect={'creative'}
+                    navigation={true}
+                    loop={true}
+                    creativeEffect={{
+                        prev: {
+                            shadow: true,
+                            translate: ['-120%', 0, -500],
+                        },
+                        next: {
+                            shadow: true,
+                            translate: ['120%', 0, -500],
+                        }
+                    }}
+                    modules={[EffectCreative, Navigation]}
+                >
+                    {
+                        LiveStreamsList.data.map((item, index) =>
+                            <SwiperSlide key={index} className={"swiper-slide"}>
+                                <LiveVideoContent {...item}/>
+                            </SwiperSlide>)
 
-                }
-            </Swiper>
-
+                    }
+                </Swiper>
+            : ''}
         </Container>
     )
 }
 
 const Container = styled.div`
   margin-bottom: 30px;
+  
 
   .swiper-container {
-    max-width: 700px;
-    height: 300px;
-    box-shadow: 0 1px 10px 6px rgba(0,0,0,0.04);
+    max-width: 800px;
+    width: 100%;
   }
-  
-  .swiper-slide{
+
+  .swiper-slide {
     display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
 `;

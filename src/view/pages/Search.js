@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import SearchContainer from "../Container/SearchContainer";
+import SearchContainer from "../container/SearchContainer";
 import {ContentContainer} from "../../styled/Container.Styled";
 
 const Search = () => {
